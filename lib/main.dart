@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fullcourse/views/home_screen.dart';
+import 'package:fullcourse/views/login_screen.dart';
+import 'package:fullcourse/views/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,13 +18,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
+      initialRoute: '/',
       routes: {
-        // '/': (context) => LoginPage(),
+        '/': (context) => LoginPage(),
         '/home': (context) => HomePage(),
-        '/main': (context) => 
-
+        '/main': (context) => MainPage(),
       },
-      home: HomePage(),
     );
   }
 }
