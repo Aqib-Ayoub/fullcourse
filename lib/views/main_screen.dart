@@ -1,35 +1,64 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:fullcourse/views/home_screen.dart';
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
   @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  int setIndex = 0;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Main Page')),
-      body: Center(child: Text('Hi there! This is the main screen.')),
+      body: pages[setIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: Colors.white),
+            icon: Icon(FontAwesomeIcons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite, color: Colors.white),
+            icon: Icon(FontAwesomeIcons.solidHeart),
             label: 'faorites',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Add'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.message_rounded),
+            icon: Icon(FontAwesomeIcons.add),
+            label: 'Add',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.message),
             label: 'Message',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.user),
+            label: 'Profile',
+          ),
         ],
+        currentIndex: setIndex,
+        onTap: (index) {
+          setState(() {
+            setIndex = index;
+          });
+        },
         showSelectedLabels: false,
         showUnselectedLabels: false,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white60,
         backgroundColor: Colors.deepPurple,
         type: BottomNavigationBarType.fixed,
       ),
     );
   }
+
+  final pages = [
+    HomePage(),
+    Center(child: Text('Favorite')),
+    Center(child: Text('Add post')),
+    Center(child: Text('Message')),
+    Center(child: Text('User')),
+  ];
 }
