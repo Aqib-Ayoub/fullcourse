@@ -10,14 +10,25 @@ class MainPage extends StatelessWidget {
       body: Center(child: Text('Hi there! This is the main screen.')),
       bottomNavigationBar: BottomNavigationBar(
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
+            icon: Icon(Icons.home, color: Colors.white),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite, color: Colors.white),
             label: 'faorites',
           ),
+          BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Add'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message_rounded),
+            label: 'Message',
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
         showSelectedLabels: false,
         showUnselectedLabels: false,
+        backgroundColor: Colors.deepPurple,
+        type: BottomNavigationBarType.fixed,
       ),
     );
   }
