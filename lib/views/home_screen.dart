@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fullcourse/widgets/post_item.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -15,28 +16,10 @@ class HomePage extends StatelessWidget {
   }
 }
 
-Widget userItems() {
-  return Row(
-    children: [
-      ClipRRect(
-        borderRadius: BorderRadius.circular(100),
-        child: Image.asset(
-          'assets/images/test.jpg',
-          width: 50,
-          height: 50,
-          fit: BoxFit.cover,
-        ),
-      ),
-      SizedBox(width: 16),
-      Text('Aqib Ayoub'),
-    ],
-  );
-}
-
 List<Widget> userFromServer() {
   List<Widget> user = [];
-  for (var i = 0; i < 1000; i++) {
-    user.add(userItems());
+  for (var i = 0; i < 15; i++) {
+    user.add(PostItem());
   }
   return user;
 }
