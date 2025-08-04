@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fullcourse/widgets/post_item.dart';
+import 'package:fullcourse/widgets/toolbar.dart';
 
 class HomePage extends StatelessWidget {
   List<String> user = [];
@@ -9,10 +10,11 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     userFromServer();
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Page'),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.location_on))],
-      ),
+      appBar: Toolbar(title: 'Home', actions: [Icon(Icons.location_on)]),
+      //  AppBar(
+      //   title: Text('Home Page'),
+      //   actions: [IconButton(onPressed: () {}, icon: Icon(Icons.location_on))],
+      // ),
       body: ListView.separated(
         itemCount: user.length,
         separatorBuilder: (context, index) {
