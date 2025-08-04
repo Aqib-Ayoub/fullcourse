@@ -2,24 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:fullcourse/widgets/post_item.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  List<String> user = [];
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    userFromServer();
     return Scaffold(
       appBar: AppBar(
         title: Text('Home Page'),
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.location_on))],
       ),
-      body: ListView(children: userFromServer()),
+      body: ListView.separated(
+        itemCount: user.length,
+        separatorBuilder: (context, index) {
+          return SizedBox(height: 20);
+        },
+        itemBuilder: (context, index) {
+          return PostItem(userName: user[index]);
+        },
+      ),
     );
   }
-}
 
-List<Widget> userFromServer() {
-  List<Widget> user = [];
-  for (var i = 0; i < 15; i++) {
-    user.add(PostItem());
+  userFromServer() {
+    for (var i = 0; i < 15; i++) {
+      user.add('User $i');
+    }
   }
-  return user;
 }

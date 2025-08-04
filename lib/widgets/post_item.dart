@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fullcourse/const/app_text.dart';
 
 class PostItem extends StatelessWidget {
-  const PostItem({super.key});
+  final String userName;
+  const PostItem({super.key, required this.userName});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class PostItem extends StatelessWidget {
                 ),
               ),
               SizedBox(width: 16),
-              Text('Aqib Ayoub', style: AppText.subtitle3),
+              Text(userName, style: AppText.subtitle3),
             ],
           ),
           SizedBox(height: 10.0),
