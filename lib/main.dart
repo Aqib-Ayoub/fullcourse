@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fullcourse/views/edit_profile_screen.dart';
 import 'package:fullcourse/views/home_screen.dart';
 import 'package:fullcourse/views/login_screen.dart';
 import 'package:fullcourse/views/main_screen.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => LoginPage(),
         '/home': (context) => HomePage(),
         '/main': (context) => MainPage(),
+        '/editProfile': (context) => EditProfilePage(),
       },
     );
   }

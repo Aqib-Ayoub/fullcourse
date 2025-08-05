@@ -16,22 +16,17 @@ class ProfilePage extends StatelessWidget {
           PopupMenuButton(
             onSelected: (value) {
               switch (value) {
-                case ProfileMenu.setting:
-                  print('Setting pressed');
+                case ProfileMenu.edit:
+                  Navigator.pushNamed(context, '/editProfile');
                   break;
                 case ProfileMenu.logout:
                   print('Logout pressed');
-                case ProfileMenu.edit:
-                  // TODO: Handle this case.
-                  throw UnimplementedError();
+                default:
               }
             },
             itemBuilder: (context) {
               return [
-                PopupMenuItem(
-                  child: Text('Settings'),
-                  value: ProfileMenu.setting,
-                ),
+                PopupMenuItem(child: Text('Edit'), value: ProfileMenu.edit),
                 PopupMenuItem(child: Text('logout'), value: ProfileMenu.logout),
               ];
             },
@@ -42,7 +37,7 @@ class ProfilePage extends StatelessWidget {
       body: Column(
         children: [
           CircleAvatar(
-            radius: 60,
+            radius: 40,
             backgroundImage: AssetImage('assets/images/test.jpg'),
           ),
           SizedBox(height: 20),
