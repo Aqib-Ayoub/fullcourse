@@ -10,11 +10,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     userFromServer();
     return Scaffold(
-      appBar: Toolbar(title: 'Home', actions: [Icon(Icons.location_on)]),
-      //  AppBar(
-      //   title: Text('Home Page'),
-      //   actions: [IconButton(onPressed: () {}, icon: Icon(Icons.location_on))],
-      // ),
+      appBar: Toolbar(
+        title: 'Home',
+        actions: [
+          IconButton(
+            onPressed: () {
+              print('locationpressed');
+            },
+            icon: Icon(Icons.location_on),
+          ),
+        ],
+      ),
+
       body: ListView.separated(
         itemCount: user.length,
         separatorBuilder: (context, index) {
