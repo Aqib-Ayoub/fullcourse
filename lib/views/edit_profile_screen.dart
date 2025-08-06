@@ -9,7 +9,13 @@ class EditProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: Toolbar(title: 'Edit Profile'),
-      body: Column(children: [AppTextfield()]),
+      body: Column(
+        children: [
+          AppTextfield(hintText: 'Enter your name'),
+          AppTextfield(hintText: 'Enter your Email'),
+          AppTextfield(hintText: 'Enter your Location'),
+        ],
+      ),
     );
   }
 }

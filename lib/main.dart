@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fullcourse/core/const/routes/app_route.dart';
 import 'package:fullcourse/views/edit_profile_screen.dart';
 import 'package:fullcourse/views/home_screen.dart';
 import 'package:fullcourse/views/login_screen.dart';
@@ -20,12 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       initialRoute: '/',
-      routes: {
-        '/': (context) => LoginPage(),
-        '/home': (context) => HomePage(),
-        '/main': (context) => MainPage(),
-        '/editProfile': (context) => EditProfilePage(),
-      },
+      routes: AppRoutes.pages,
     );
   }
 }

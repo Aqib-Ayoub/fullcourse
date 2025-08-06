@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fullcourse/const/app_text.dart';
+import 'package:fullcourse/core/const/app_text.dart';
 
 class PostItem extends StatelessWidget {
   final String userName;

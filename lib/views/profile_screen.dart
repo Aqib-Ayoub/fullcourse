@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fullcourse/const/app_text.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:fullcourse/core/const/app_text.dart';
 import 'package:fullcourse/widgets/toolbar.dart';
 
 enum ProfileMenu { edit, setting, logout }
@@ -17,17 +18,35 @@ class ProfilePage extends StatelessWidget {
             onSelected: (value) {
               switch (value) {
                 case ProfileMenu.edit:
-                  Navigator.pushNamed(context, '/editProfile');
+                  Navigator.of(context).pushNamed('/editProfile');
                   break;
                 case ProfileMenu.logout:
-                  print('Logout pressed');
+                  Navigator.pushNamed(context, '/login');
                 default:
               }
             },
             itemBuilder: (context) {
               return [
-                PopupMenuItem(child: Text('Edit'), value: ProfileMenu.edit),
-                PopupMenuItem(child: Text('logout'), value: ProfileMenu.logout),
+                PopupMenuItem(
+                  value: ProfileMenu.edit,
+                  child: Row(
+                    children: [
+                      Icon(FontAwesomeIcons.edit, size: 20.0),
+                      SizedBox(width: 10),
+                      Text('Edit Profile'),
+                    ],
+                  ),
+                ),
+                PopupMenuItem(
+                  value: ProfileMenu.logout,
+                  child: Row(
+                    children: [
+                      Icon(FontAwesomeIcons.signOutAlt, size: 20.0),
+                      SizedBox(width: 10.0),
+                      Text('Logout'),
+                    ],
+                  ),
+                ),
               ];
             },
           ),
