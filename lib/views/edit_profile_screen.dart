@@ -5,8 +5,17 @@ import 'package:fullcourse/widgets/app_textfield.dart';
 import 'package:fullcourse/widgets/toolbar.dart';
 import 'package:fullcourse/widgets/user_avatar.dart';
 
-class EditProfilePage extends StatelessWidget {
+enum Gender { none, male, female, other }
+
+class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});
+
+  @override
+  State<EditProfilePage> createState() => _EditProfilePageState();
+}
+
+class _EditProfilePageState extends State<EditProfilePage> {
+  var gender = Gender.none;
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +62,56 @@ class EditProfilePage extends StatelessWidget {
             AppTextfield(hintText: 'Phone number'),
             SizedBox(height: 16.0),
             AppTextfield(hintText: 'Enter your Location'),
+            SizedBox(height: 16.0),
+            Container(
+              decoration: BoxDecoration(
+                color: AppColors.cardBackground,
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: RadioListTile(
+                      contentPadding: EdgeInsets.all(0),
+                      title: Text('Male'),
+                      value: Gender.male,
+                      groupValue: gender,
+                      onChanged: (value) {
+                        setState(() {
+                          gender = Gender.male;
+                        });
+                      },
+                    ),
+                  ),
+                  Expanded(
+                    child: RadioListTile(
+                      contentPadding: EdgeInsets.all(0),
+                      title: Text('Female'),
+                      value: Gender.female,
+                      groupValue: gender,
+                      onChanged: (value) {
+                        setState(() {
+                          gender = Gender.female;
+                        });
+                      },
+                    ),
+                  ),
+                  Expanded(
+                    child: RadioListTile(
+                      contentPadding: EdgeInsets.all(0),
+                      title: Text('Other'),
+                      value: Gender.other,
+                      groupValue: gender,
+                      onChanged: (value) {
+                        setState(() {
+                          gender = Gender.other;
+                        });
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
