@@ -67,6 +67,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
               decoration: BoxDecoration(
                 color: AppColors.cardBackground,
                 borderRadius: BorderRadius.circular(12.0),
+                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5)],
               ),
               child: Row(
                 children: [

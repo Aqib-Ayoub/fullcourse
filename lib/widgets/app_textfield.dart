@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fullcourse/core/const/app_colors.dart';
 
 class AppTextfield extends StatelessWidget {
   final String hintText;
@@ -8,7 +9,7 @@ class AppTextfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.cardBackground,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5)],
       ),
