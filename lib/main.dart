@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fullcourse/core/const/routes/app_route.dart';
-import 'package:fullcourse/views/edit_profile_screen.dart';
-import 'package:fullcourse/views/home_screen.dart';
-import 'package:fullcourse/views/login_screen.dart';
-import 'package:fullcourse/views/main_screen.dart';
+import 'package:fullcourse/core/routes/app_route.dart';
 
 void main() {
   runApp(const MyApp());

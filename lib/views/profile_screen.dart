@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:fullcourse/core/const/app_colors.dart';
 import 'package:fullcourse/core/const/app_text.dart';
 import 'package:fullcourse/widgets/toolbar.dart';
+import 'package:fullcourse/widgets/user_avatar.dart';
 
 enum ProfileMenu { edit, setting, logout }
 
@@ -11,8 +13,11 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.primaryLight,
       appBar: Toolbar(
+        backgroundColor: AppColors.primaryLight,
         title: 'Profile',
+
         actions: [
           PopupMenuButton(
             onSelected: (value) {
@@ -55,10 +60,7 @@ class ProfilePage extends StatelessWidget {
 
       body: Column(
         children: [
-          CircleAvatar(
-            radius: 40,
-            backgroundImage: AssetImage('assets/images/test.jpg'),
-          ),
+          UserAvatar(size: 50.0),
           SizedBox(height: 20),
           Text('Aqib Ayoub', style: AppText.subtitle1),
           Text('Bicherwara', style: AppText.body2),
