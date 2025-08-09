@@ -22,6 +22,7 @@ class AppTextfield extends StatelessWidget {
           ),
           border: InputBorder.none,
           hintText: hintText,
+
           // prefixIcon: Icon(Icons.lock, color: Colors.deepPurple),
           // suffixIcon: Icon(Icons.visibility_off, color: Colors.grey),
         ),

@@ -26,4 +26,6 @@ class AppColors {
 
   // Borders & Dividers
   static const Color border = Color(0xFFBDBDBD);
+
+  static final Color fieldColor = Color(0xFFFFFFFF).withOpacity(0.6);
 }
