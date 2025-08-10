@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fullcourse/core/const/app_colors.dart';
 
-class BottomNavigation extends StatefulWidget {
-  final int? currentIndex;
-  final ValueChanged<int>? onTap;
-  const BottomNavigation({super.key, this.currentIndex, this.onTap});
+enum Menus { home, favorite, post, message, profile }
 
-  @override
-  State<BottomNavigation> createState() => _BottomNavigationState();
-}
+class BottomNavigation extends StatelessWidget {
+  final int currentIndex;
+  final ValueChanged<int> onTap;
+  const BottomNavigation({
+    super.key,
+    required this.currentIndex,
+    required this.onTap,
+  });
 
-class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return Container(
