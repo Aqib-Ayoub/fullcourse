@@ -15,6 +15,7 @@ class BottomNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var currentIndex = Menus.home;
     return Container(
       height: 87,
       margin: EdgeInsets.all(24),
